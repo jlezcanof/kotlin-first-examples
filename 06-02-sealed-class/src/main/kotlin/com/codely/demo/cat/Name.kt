@@ -8,5 +8,4 @@ data class Name(val value: String) {
             Name(value)
         }
     }
-
 }
