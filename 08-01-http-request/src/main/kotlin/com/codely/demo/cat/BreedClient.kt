@@ -2,7 +2,6 @@ package com.codely.demo.cat
 
 import org.json.JSONArray
 
-
 interface BreedClient {
     fun findAll(): JSONArray
 }
