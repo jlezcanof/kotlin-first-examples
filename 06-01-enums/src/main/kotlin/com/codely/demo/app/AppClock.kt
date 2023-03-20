@@ -25,21 +25,21 @@ class AppClock(
             return
         }
         line.takeUnless {
-                it.isNullOrEmpty()
-            }?.let {
-                LocalDate.parse(it)
-            }.apply {
-                if (this == null) {
-                    writer.write("The introduced date <$this> is not valid")
-                    exitProcess(1)
-                }
-            }.also {
-                writer.write("You wrote the date $it")
-            }.takeIf {
-                it != null
-            }?.run {
-                this.calculateDifferenceUntilToday()
+            it.isNullOrEmpty()
+        }?.let {
+            LocalDate.parse(it)
+        }.apply {
+            if (this == null) {
+                writer.write("The introduced date <$this> is not valid")
+                exitProcess(1)
             }
+        }.also {
+            writer.write("You wrote the date $it")
+        }.takeIf {
+            it != null
+        }?.run {
+            this.calculateDifferenceUntilToday()
+        }
 
         writer.write("Bye!")
     }

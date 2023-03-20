@@ -5,11 +5,11 @@ import com.codely.demo.shared.Reader
 import com.codely.demo.shared.Writer
 import io.mockk.every
 import io.mockk.mockk
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
 import java.time.LocalDate
 import java.util.UUID
 import kotlin.test.assertEquals
-import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.assertThrows
 
 internal class CatCreatorTest {
     private val id = "92efe4c8-fab9-4cb0-82d9-5c75eeca2dc1"
@@ -45,7 +45,8 @@ internal class CatCreatorTest {
         assertEquals(
             mapOf(
                 expectedCat.id to expectedCat
-            ), repository.findAll()
+            ),
+            repository.findAll()
         )
     }
 
@@ -73,7 +74,8 @@ internal class CatCreatorTest {
         assertEquals(
             mapOf(
                 expectedCat.id to expectedCat
-            ), repository.findAll()
+            ),
+            repository.findAll()
         )
     }
 
