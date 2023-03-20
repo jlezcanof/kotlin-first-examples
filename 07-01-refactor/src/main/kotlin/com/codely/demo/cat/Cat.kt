@@ -51,6 +51,7 @@ data class Cat(
     }
     data class Name(val value: String) {
         companion object {
+            // value object
             fun from(value: String?) = if (value.isNullOrBlank() || value.isNullOrEmpty()) {
                 throw InvalidName(value)
             } else {
@@ -60,6 +61,7 @@ data class Cat(
     }
     data class Id(val value: UUID) {
         companion object {
+            // value object
             fun from(value: String?) = try {
                 Id(UUID.fromString(value))
             } catch (exception: Throwable) {
@@ -70,6 +72,7 @@ data class Cat(
 
     data class Origin(val value: String) {
         companion object {
+            // value object
             fun from(value: String?) = if (value.isNullOrEmpty() || value.isNullOrBlank()) {
                 throw InvalidOrigin(value)
             } else Origin(value)
@@ -78,6 +81,7 @@ data class Cat(
 
     data class Vaccinated(val value: Boolean) {
         companion object {
+            // value object
             fun from(value: String?) = if (value.isNullOrBlank() || value.isNullOrEmpty() || !isValid(value)) {
                 throw InvalidVaccinated(value)
             } else Vaccinated(value.toBoolean())
@@ -88,6 +92,7 @@ data class Cat(
 
     data class BirthDate(val value: LocalDate) {
         companion object {
+            // value object
             fun from(value: String?) = if (value.isNullOrBlank() || value.isNullOrEmpty()) {
                 throw InvalidBirthDate(value)
             } else try {
