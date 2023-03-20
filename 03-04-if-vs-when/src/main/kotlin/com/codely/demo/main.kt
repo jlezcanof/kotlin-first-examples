@@ -23,10 +23,10 @@ fun main() {
         }?.run {
             val currentDate = LocalDate.now()
             with(Period.between(this, currentDate)) {
-                when {
+                when {// podriamos asociarlo más a un matching expression
                     this.years > 0 -> println("The difference between the date you wrote an today is ${this.years} years")
-                    this.months > 0 -> println("The difference between the date you wrote an today is ${this.months} months")
-                    this.days > 0 -> println("The difference between the date you wrote an today is ${this.days} days")
+                    months > 0 -> println("The difference between the date you wrote an today is ${months} months")
+                    days > 0 -> println("The difference between the date you wrote an today is ${days} days")
                 }
             }
         }
