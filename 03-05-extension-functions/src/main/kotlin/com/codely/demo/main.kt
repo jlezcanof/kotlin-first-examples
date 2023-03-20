@@ -29,6 +29,7 @@ fun main() {
 
 private fun supportNullableString(line: String?) = line
 
+// extended function, pueden ser privadas o públicas, cuidadito con esto
 private fun LocalDate.calculateDifferenceUntilToday() = with(Period.between(this, LocalDate.now())) {
     when {
         this.years > 18 -> println("Te has columnpiado, ${this.years} son muchos años")
