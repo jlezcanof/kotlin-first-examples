@@ -11,7 +11,7 @@ data class Cat(
     val birthDate: LocalDate,
     val createdAt: LocalDate
 ) {
-    companion object {
+    companion object { //lo usa para named constructors
         fun vaccinatedWith(
             id: UUID,
             name: String,
