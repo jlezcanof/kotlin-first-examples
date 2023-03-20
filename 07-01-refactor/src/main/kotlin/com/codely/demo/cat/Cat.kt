@@ -2,10 +2,7 @@ package com.codely.demo.cat
 
 import com.codely.demo.shared.AgeCalculator
 import java.time.LocalDate
-import java.time.format.DateTimeFormatter
-import java.time.format.DateTimeFormatterBuilder
 import java.time.format.DateTimeParseException
-import java.time.format.FormatStyle
 import java.util.UUID
 
 data class Cat(
@@ -26,7 +23,8 @@ data class Cat(
                 throw InvalidColor(value)
             } else valueOf(value.uppercase())
 
-            private fun isValid(value: String): Boolean = values().map { it.name }.contains(value.uppercase())
+            private fun isValid(value: String): Boolean = values().map{
+                it.name }.contains(value.uppercase())
         }
     }
 

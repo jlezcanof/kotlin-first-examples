@@ -77,4 +77,22 @@ class AppWithMockk {
 
         verify { writer.write("The introduced date < > is not valid") }
     }
+
+
+
+    //test de lezcano
+    @Test
+    fun `should calculate the difference and return 5 days`() {
+        val reader = mockk<Reader>()
+        val writer = mockk<Writer>()//relaxed = true
+        val clock = mockk<Clock>()
+        val app = App(reader, writer, clock)
+        every { reader.read() } returns "2022-04-10"
+        every { clock.now() } returns LocalDate.parse("2022-04-15")
+
+
+        app.execute()
+
+        verify { writer.write("The difference between the date you wrote an today is 5 days") }
+    }
 }

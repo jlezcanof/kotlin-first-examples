@@ -18,8 +18,10 @@ class CatCreator(private val reader: Reader, private val writer: Writer, private
         val vaccinated = reader.read()
         writer.write("When did your cat birth?")
         val birthDate = reader.read()
+        writer.write("What is the favorite toy?")
+        val favoriteToy = reader.read()
 
-        if (name.isNullOrBlank() || name.isNullOrEmpty() || origin.isNullOrEmpty() || origin.isNullOrBlank()) {
+        if (name.isNullOrBlank() || name.isNullOrEmpty() || origin.isNullOrEmpty() || origin.isNullOrBlank() || favoriteToy.isNullOrEmpty()) {
             throw IllegalArgumentException()
         } else {
             val cat = Cat(
@@ -28,7 +30,8 @@ class CatCreator(private val reader: Reader, private val writer: Writer, private
                 origin = origin,
                 vaccinated = vaccinated.toBoolean(),
                 birthDate = LocalDate.parse(birthDate),
-                createdAt = clock.now()
+                createdAt = clock.now(),
+                favoriteToy = favoriteToy
             )
             repository.save(cat)
 

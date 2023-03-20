@@ -21,7 +21,7 @@ fun main() {
     }.takeIf {
             it != null
     }?.run {
-        this.calculateDifferenceUntilToday()
+        calculateDifferenceUntilToday()
     }
 
     println("Bye!")
@@ -29,8 +29,9 @@ fun main() {
 
 private fun supportNullableString(line: String?) = line
 
-private fun LocalDate.calculateDifferenceUntilToday() = kotlin.with(Period.between(this, LocalDate.now())) {
+private fun LocalDate.calculateDifferenceUntilToday() = with(Period.between(this, LocalDate.now())) {
     when {
+        this.years > 18 -> println("Te has columnpiado, ${this.years} son muchos años")
         this.years > 0 -> println("The difference between the date you wrote an today is ${this.years} years")
         this.months > 0 -> println("The difference between the date you wrote an today is ${this.months} months")
         this.days > 0 -> println("The difference between the date you wrote an today is ${this.days} days")

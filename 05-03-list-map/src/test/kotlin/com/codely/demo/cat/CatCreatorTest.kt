@@ -18,6 +18,7 @@ internal class CatCreatorTest {
         private val vaccinated = "true"
         private val birthDate = "2019-01-01"
         private val fixedDate = LocalDate.of(2021, 8, 31)
+        private val favoriteToy = "ball of fire"
 
     @Test
     fun `should create a cat`() {
@@ -37,7 +38,8 @@ internal class CatCreatorTest {
             origin,
             vaccinated.toBoolean(),
             LocalDate.parse(birthDate),
-            fixedDate
+            fixedDate,
+            favoriteToy
         )
 
         assertEquals(mapOf(

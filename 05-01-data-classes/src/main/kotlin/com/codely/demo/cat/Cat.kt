@@ -3,7 +3,7 @@ package com.codely.demo.cat
 import java.time.LocalDate
 import java.util.UUID
 
-data class Cat(
+data class Cat(//equals hascode , tostring, copy
     val id: UUID,
     val name: String,
     val origin: String,

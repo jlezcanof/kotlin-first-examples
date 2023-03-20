@@ -13,7 +13,7 @@ fun main() {
         LocalDate.parse(it)
     }.apply {
         if (this == null) {
-            println("The introduced date <$this> is not valid")
+            println("The introduced date is not valid")
             exitProcess(1)
         }
     }.also {
@@ -22,7 +22,7 @@ fun main() {
             it != null
     }?.run {
         val currentDate = LocalDate.now()
-        kotlin.with(Period.between(this, currentDate)) {
+        with(Period.between(this, currentDate)) {
             when {
                 this.years > 0 -> println("The difference between the date you wrote an today is ${this.years} years")
                 this.months > 0 -> println("The difference between the date you wrote an today is ${this.months} months")

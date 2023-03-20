@@ -9,7 +9,8 @@ data class Cat(
     val origin: String,
     val vaccinated: Boolean,
     val birthDate: LocalDate,
-    val createdAt: LocalDate
+    val createdAt: LocalDate,
+    val favoriteToy: String
 ) {
     companion object {
         fun vaccinatedWith(
@@ -17,14 +18,16 @@ data class Cat(
             name: String,
             origin: String,
             birthDate: LocalDate,
-            createdAt: LocalDate
+            createdAt: LocalDate,
+            favoriteToy: String
         ) = Cat(
             id = id,
             name = name,
             origin = origin,
             vaccinated = true,
             birthDate = birthDate,
-            createdAt = createdAt
+            createdAt = createdAt,
+            favoriteToy = favoriteToy
         )
 
         fun notVaccinatedWith(
@@ -32,14 +35,16 @@ data class Cat(
             name: String,
             origin: String,
             birthDate: LocalDate,
-            createdAt: LocalDate
+            createdAt: LocalDate,
+            favoriteToy: String
         ) = Cat(
             id = id,
             name = name,
             origin = origin,
             vaccinated = false,
             birthDate = birthDate,
-            createdAt = createdAt
+            createdAt = createdAt,
+            favoriteToy = favoriteToy
         )
     }
 }
