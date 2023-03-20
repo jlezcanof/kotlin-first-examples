@@ -25,7 +25,7 @@ class CatCreator(val reader: Reader, val writer: Writer, val clock: Clock) {
             throw IllegalArgumentException()
         }
 
-        return Cat(
+        return Cat(//esto es named arguments...id =aaaa, name=
             id = UUID.fromString(id),
             name = name,
             origin = origin,
