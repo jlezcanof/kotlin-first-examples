@@ -1,3 +1,1 @@
-# Introducción a Kotlin: Tu primera App
-
-[Go to the course](https://pro.codely.tv/library/introduccion-a-kotlin-tu-primera-app-174088)
+# Introducción a Kotlin: Primeros ejemplos solo para practicar
