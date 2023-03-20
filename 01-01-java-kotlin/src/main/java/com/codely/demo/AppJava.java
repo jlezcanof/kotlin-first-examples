@@ -15,7 +15,7 @@ public class AppJava {
         list.add("SIAMES");
         list.add("AZUL RUSO");
         list.add("COMUN EUROPEO");
-        App appKotlin = new App();
+        AppKotlin appKotlin = new AppKotlin();
         System.out.println(list.stream().map((
                 appKotlin::toLowerCaseBreed
         )));

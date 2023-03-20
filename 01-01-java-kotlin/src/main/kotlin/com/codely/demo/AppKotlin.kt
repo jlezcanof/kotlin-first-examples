@@ -1,6 +1,6 @@
 package com.codely.demo
 
-class App() {
+class AppKotlin() {
     fun execute() {
         println("=======>START KOTLIN CODE<=======")
         val list = listOf("siames", "azul ruso", "comun europeo")

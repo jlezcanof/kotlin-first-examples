@@ -1,6 +1,6 @@
 package com.codely.demo
 
 fun main() {
-    App().execute()
+    AppKotlin().execute()
     AppJava().execute()
 }
