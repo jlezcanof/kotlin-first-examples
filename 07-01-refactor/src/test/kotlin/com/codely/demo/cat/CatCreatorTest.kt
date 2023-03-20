@@ -209,6 +209,4 @@ internal class CatCreatorTest {
         val creator = CatCreator(reader, writer, clock, repository)
         assertThrows<InvalidBirthDate> { creator.create() }
     }
-
-
 }

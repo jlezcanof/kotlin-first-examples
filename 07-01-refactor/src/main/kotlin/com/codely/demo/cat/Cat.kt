@@ -23,8 +23,9 @@ data class Cat(
                 throw InvalidColor(value)
             } else valueOf(value.uppercase())
 
-            private fun isValid(value: String): Boolean = values().map{
-                it.name }.contains(value.uppercase())
+            private fun isValid(value: String): Boolean = values().map {
+                it.name
+            }.contains(value.uppercase())
         }
     }
 
@@ -94,7 +95,6 @@ data class Cat(
             } catch (e: DateTimeParseException) {
                 throw InvalidBirthDate(value)
             }
-
         }
     }
 }
