@@ -9,7 +9,7 @@ fun main() {
     val line = supportNullableString(readLine())
     if (!line.isNullOrEmpty()) {
         val date = LocalDate.parse(line)
-        if (date == null){
+        if (date == null) {
             println("The introduced date <$date> is not valid")
             exitProcess(1)
         } else {

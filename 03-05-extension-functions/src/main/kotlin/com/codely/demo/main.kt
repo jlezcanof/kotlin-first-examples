@@ -7,22 +7,22 @@ import kotlin.system.exitProcess
 fun main() {
     println("Please enter a date with the format <yyyy-MM-dd>")
     supportNullableString(readLine())
-    .takeUnless {
-        it.isNullOrEmpty()
-    }?.let {
-        LocalDate.parse(it)
-    }.apply {
-        if (this == null) {
-            println("The introduced date <$this> is not valid")
-            exitProcess(1)
-        }
-    }.also {
-        println("You wrote the date $it")
-    }.takeIf {
+        .takeUnless {
+            it.isNullOrEmpty()
+        }?.let {
+            LocalDate.parse(it)
+        }.apply {
+            if (this == null) {
+                println("The introduced date <$this> is not valid")
+                exitProcess(1)
+            }
+        }.also {
+            println("You wrote the date $it")
+        }.takeIf {
             it != null
-    }?.run {
-        calculateDifferenceUntilToday()
-    }
+        }?.run {
+            calculateDifferenceUntilToday()
+        }
 
     println("Bye!")
 }
