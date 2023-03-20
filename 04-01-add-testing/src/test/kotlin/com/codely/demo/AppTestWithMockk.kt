@@ -3,8 +3,8 @@ package com.codely.demo
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
-import org.junit.jupiter.api.Test
 import java.time.LocalDate
+import org.junit.jupiter.api.Test
 
 class AppWithMockk {
 
@@ -31,7 +31,6 @@ class AppWithMockk {
         every { reader.read() } returns "2020-09-01"
         every { clock.now() } returns LocalDate.parse("2021-08-31")
 
-
         app.execute()
 
         verify { writer.write("The difference between the date you wrote an today is 11 months") }
@@ -45,7 +44,6 @@ class AppWithMockk {
         val app = App(reader, writer, clock)
         every { reader.read() } returns "2021-08-29"
         every { clock.now() } returns LocalDate.parse("2021-08-31")
-
 
         app.execute()
 
@@ -78,18 +76,15 @@ class AppWithMockk {
         verify { writer.write("The introduced date < > is not valid") }
     }
 
-
-
-    //test de lezcano
+    // test de lezcano
     @Test
     fun `should calculate the difference and return 5 days`() {
         val reader = mockk<Reader>()
-        val writer = mockk<Writer>()//relaxed = true
+        val writer = mockk<Writer>() // relaxed = true
         val clock = mockk<Clock>()
         val app = App(reader, writer, clock)
         every { reader.read() } returns "2022-04-10"
         every { clock.now() } returns LocalDate.parse("2022-04-15")
-
 
         app.execute()
 

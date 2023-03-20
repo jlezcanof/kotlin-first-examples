@@ -40,6 +40,5 @@ class CatCreator(val reader: Reader, val writer: Writer, val clock: Clock) {
                 createdAt = clock.now()
             )
         }
-
     }
 }
