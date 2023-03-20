@@ -23,8 +23,8 @@ class CatCreator(private val reader: Reader, private val writer: Writer, private
 
         if (name.isNullOrBlank() || name.isNullOrEmpty() || origin.isNullOrEmpty() || origin.isNullOrBlank() || color.isNullOrBlank() || color.isNullOrEmpty()) {
             throw IllegalArgumentException()
-        } else {
-            val cat = if (vaccinated.toBoolean()) {
+        }
+        val cat = if (vaccinated.toBoolean()) {
                 Cat.vaccinatedWith(
                     id = UUID.fromString(id),
                     name = name,
@@ -33,7 +33,7 @@ class CatCreator(private val reader: Reader, private val writer: Writer, private
                     color = color,
                     createdAt = clock.now()
                 )
-            } else {
+        } else {
                 Cat.notVaccinatedWith(
                     id = UUID.fromString(id),
                     name = name,
@@ -42,10 +42,10 @@ class CatCreator(private val reader: Reader, private val writer: Writer, private
                     birthDate = LocalDate.parse(birthDate),
                     createdAt = clock.now()
                 )
-            }
-            repository.save(cat)
-
-            return cat
         }
+         repository.save(cat)
+
+          return cat
+
     }
 }
